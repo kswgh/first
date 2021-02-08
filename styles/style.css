@@ -7,12 +7,16 @@
 #container {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(201, 226, 235);
+  border: 2px solid lightgray;
 }
 
 #inner-wrap {
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  background-color: rgb(226, 202, 202);
+  border: 2px solid lightgray;
+}
+
+header {
+  border: 2px solid lightgray;
 }
