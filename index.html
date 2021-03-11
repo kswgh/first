@@ -28,18 +28,20 @@
       }
     }
 
-    let temp = [];
+    let tempArray = [];
+    let displayString = '';
     for (const key in numArray) {
       let num = Number(key) + 1;
-      temp += numArray[key];
+      tempArray.push(numArray[key]);
       if (num % 6 === 0) {
-        temp += '<br>';
-      } else {
-        temp += ' ';
+         tempArray.sort((a, b) => {
+           return a - b;
+         });
+         displayString += tempArray + '<br>';
+         tempArray = [];
       }
     }
-    show.innerHTML = temp;
-    
+    show.innerHTML = displayString + tempArray;
   });
 </script>
 
