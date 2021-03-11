@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Study</title>
-  <link rel="stylesheet" href="styles/style.css" defer>
+  <title>Document</title>
 </head>
+
 <body>
-  <div id="container">
-    <div id="inner-wrap">
-      <header>
-        
-      </header>
-    </div>
-  </div>
+  <h1>나만의 로또 번호</h1>
+  <input type="button" value="번호추출" class="genButton">
+  <p class="show"></p>
 </body>
+<script>
+  let genButton = document.querySelector('.genButton');
+  let show = document.querySelector('.show');
+
+  genButton.addEventListener('click', function () {
+    let randNum = 0;
+    let numArray = [];
+
+    while (numArray.length < 45) {
+      randNum = Math.floor((Math.random() * 45) + 1);
+      if (!numArray.includes(randNum)) {
+        numArray.push(randNum);
+      }
+    }
+
+    let temp = [];
+    for (const key in numArray) {
+      let num = Number(key) + 1;
+      temp += numArray[key];
+      if (num % 6 === 0) {
+        temp += '<br>';
+      } else {
+        temp += ' ';
+      }
+    }
+    show.innerHTML = temp;
+    
+  });
+</script>
+
 </html>
